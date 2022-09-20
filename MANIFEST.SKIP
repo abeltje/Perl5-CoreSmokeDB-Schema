@@ -1,0 +1,5 @@
+Makefile$
+Makefile\.bak$
+cover_db/
+\..+\.swp
+\.git(ignore|attributes|/)
