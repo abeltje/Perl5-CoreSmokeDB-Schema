@@ -26,6 +26,7 @@ WriteMakefile(
         'DBIx::Class::Schema::Loader' => '0.07049',
         'DBD::Pg'                     => '3.14.0',
         'DateTime::Format::Pg'        => '0.16013',
+        'Exception::Class'            => '1.44',
     },
 
     MIN_PERL_VERSION => '5.010001',

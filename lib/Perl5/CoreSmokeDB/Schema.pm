@@ -17,6 +17,7 @@ __PACKAGE__->load_namespaces;
 
 our $VERSION = 1.06;
 our $SCHEMAVERSION = 3;
+our $PGAPPNAME = 'Perl5CoreSmokeDB';
 
 =head1 NAME
 
@@ -38,10 +39,14 @@ Another use is: C<< $schema->deploy() >>
 =cut
 
 use Exception::Class (
-    'Test::Smoke::Gateway::Exception' =>
-    'Test::Smoke::Gateway::VersionMismatchException' => {
-        isa => 'Test::Smoke::Gateway::Exception',
+    'Perl5::CoreSmokeDB::Schema::Exception' =>
+        'Perl5::CoreSmokeDB::Schema::VersionMismatchException' => {
+        isa   => 'Perl5::CoreSmokeDB::Schema::Exception',
         alias => 'throw_version_mismatch'
+    },
+    'Perl5::CoreSmokeDB::Schema::DBDriverMismatchExeption' => {
+        isa   => 'Perl5::CoreSmokeDB::Schema::Exception',
+        alias => 'throw_dbdriver_mismatch',
     },
 );
 
@@ -99,7 +104,6 @@ Populate the tsgateway_config-table with data.
 
 sub deploy {
     my $self = shift;
-    my $dbh = $self->storage->dbh;
 
     if ($self->storage->connect_info->[0] =~ m{^dbi:SQLite}) {
         $self->sqlite_post_connect();
@@ -108,12 +112,15 @@ sub deploy {
         $self->pg_pre_deploy();
     }
     else {
-        my ($driver) = $self->storage->connect_info-[0] =~ m{^dbi:([^:]+)};
-        die "$driver not supported for " . __PACKAGE__
+        my ($driver) = $self->storage->connect_info->[0] =~ m{^ (dbi: [^:]+) }x;
+        throw_dbdriver_mismatch(
+            sprintf("%s not supported for %s (dbi:Pg/dbi:SQLite)", $driver, __PACKAGE__)
+        );
     }
 
     $self->next::method(@_);
 
+    my $dbh = $self->storage->dbh;
     # FIX the plevel column; DBIx::Class doesn't know how to do 'GENERATED'
     # columns
     $dbh->do(<<EOQ);
@@ -155,14 +162,14 @@ sub sqlite_post_connect {
 
 =head2 $schema->pg_post_connect
 
-Set the C<application_name> for this connection to B<perl5coresmokedb>.
+Set the C<application_name> for this connection to B<Perl5CoreSmokeDB>.
 
 =cut
 
 sub pg_post_connect {
     my $self = shift;
 
-    $self->storage->dbh->do("SET application_name TO perl5coresmokedb");
+    $self->storage->dbh->do("SET application_name TO $PGAPPNAME");
 }
 
 =head2 $schema->pg_pre_deploy
