@@ -15,7 +15,7 @@ __PACKAGE__->load_namespaces;
 # Created by DBIx::Class::Schema::Loader v0.07049 @ 2022-09-06 09:15:22
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:vCye+8pfvU4CmiRtdudyxw
 
-our $VERSION = 1.05;
+our $VERSION = 1.06;
 our $SCHEMAVERSION = 3;
 
 =head1 NAME
