@@ -15,7 +15,7 @@ __PACKAGE__->load_namespaces;
 # Created by DBIx::Class::Schema::Loader v0.07049 @ 2022-09-06 09:15:22
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:vCye+8pfvU4CmiRtdudyxw
 
-our $VERSION = 1.03;
+our $VERSION = 1.05;
 our $SCHEMAVERSION = 3;
 
 =head1 NAME
@@ -60,7 +60,8 @@ sub connection {
 
     $self->_check_version($_[3]);
 
-    $self->sqlite_post_connect if $_[0] =~ m{^dbi:SQLite};
+    $self->pg_post_connect     if $_[0] =~ m{^ dbi:Pg: }x;
+    $self->sqlite_post_connect if $_[0] =~ m{^ dbi:SQLite: }x;
 
     return $self;
 }
@@ -150,6 +151,18 @@ sub sqlite_post_connect {
         1, \&plevel,
         SQLITE_DETERMINISTIC
     );
+}
+
+=head2 $schema->pg_post_connect
+
+Set the C<application_name> for this connection to B<perl5coresmokedb>.
+
+=cut
+
+sub pg_post_connect {
+    my $self = shift;
+
+    $self->storage->dbh->do("SET application_name TO perl5coresmokedb");
 }
 
 =head2 $schema->pg_pre_deploy

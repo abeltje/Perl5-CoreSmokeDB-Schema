@@ -179,4 +179,36 @@ sub test_env {
         : $self->io_env;
 }
 
+=head2 $record->as_hashref([$is_full])
+
+Returns a HashRef with the inflated columns.
+
+=head3 Parameters
+
+Positional:
+
+=over
+
+=item 1. C<'full'>
+
+If the word C<full> is passed as the first argument the related
+C<failures_for_env> are also included in the resulting HashRef.
+
+=back
+
+=cut
+
+sub as_hashref {
+    my $self = shift;
+    my ($is_full) = @_;
+
+    my $record = { $self->get_inflated_columns };
+
+    if ($is_full eq 'full') {
+        $record->{failures} = [ map { $_->as_hashref($is_full) } $self->failures_for_env ];
+    }
+
+    return $record;
+}
+
 1;

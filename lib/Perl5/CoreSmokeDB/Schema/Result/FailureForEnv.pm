@@ -111,6 +111,18 @@ __PACKAGE__->belongs_to(
 # Created by DBIx::Class::Schema::Loader v0.07049 @ 2022-09-06 09:15:22
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:s/llMes/nmwNe5cYf1TFeA
 
+=head2 $record->as_hashref
 
-# You can replace this text with custom code or comments, and it will be preserved on regeneration
+Returns a HashRef with the inflated columns.
+
+=cut
+
+sub as_hashref {
+    my $self = shift;
+
+    my $record = { $self->get_inflated_columns };
+
+    return $record;
+}
+
 1;

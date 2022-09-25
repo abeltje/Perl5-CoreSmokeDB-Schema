@@ -534,7 +534,6 @@ __PACKAGE__->remove_column('plevel');
 delete($_plevel_column->{default_value});
 __PACKAGE__->add_column('plevel', $_plevel_column);
 
-
 sub arch_os_version_key {
     my $self = shift;
     return join( "##", $self->architecture, $self->osname, $self->osversion, $self->hostname);
@@ -770,6 +769,39 @@ sub time_in_hhmm {
     $diff && !$days && !$hour and push @parts, "$diff seconds";
 
     return join " ", @parts;
+}
+
+=head2 $record->as_hashref([$is_full])
+
+Returns a HashRef with the inflated columns.
+
+=head3 Parameters
+
+Positional:
+
+=over
+
+=item 1. C<'full'>
+
+If the word C<full> is passed as the first argument the related
+C<configs> are also included in the resulting HashRef.
+
+=back
+
+=cut
+
+sub as_hashref {
+    my $self = shift;
+    my ($is_full) = @_;
+
+    my $record = { $self->get_inflated_columns };
+    $record->{smoke_date} = $self->smoke_date->rfc3339 if $self->smoke_date;
+
+    if ($is_full eq 'full') {
+        $record->{configs} = [ map { $_->as_hashref($is_full) } $self->configs ];
+    }
+
+    return $record;
 }
 
 1;

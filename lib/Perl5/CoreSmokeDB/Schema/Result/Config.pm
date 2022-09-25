@@ -194,4 +194,37 @@ sub full_arguments {
         : $self->arguments;
 }
 
+=head2 $record->as_hashref([$is_full])
+
+Returns a HashRef with the inflated columns.
+
+=head3 Parameters
+
+Positional:
+
+=over
+
+=item 1. C<'full'>
+
+If the word C<full> is passed as the first argument the related
+C<results> are also included in the resulting HashRef.
+
+=back
+
+=cut
+
+sub as_hashref {
+    my $self = shift;
+    my ($is_full) = @_;
+
+    my $record = { $self->get_inflated_columns };
+    $record->{started} = $self->started->rfc3339;
+
+    if ($is_full eq 'full') {
+        $record->{results} = [ map { $_->as_hashref($is_full) } $self->results ];
+    }
+
+    return $record;
+}
+
 1;
