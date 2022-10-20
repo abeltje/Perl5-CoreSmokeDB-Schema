@@ -57,6 +57,18 @@ between a `result` and a test-`failure`.
 
 This table holds the test name, status and output from the test harness.
 
+## TsgatewayConfig
+
+This table (`tsgateway_config`) holds the schema version of the database and
+was only introduced after the first version of the schema. It might also be
+used future to keep other global information about the `Perl5::CoreSmokeDB`
+software.
+
+# SEE ALSO
+
+* [Perl5::CoreSmokeDB::API](https://github.com/abeltje/Perl5-CoreSmokeDB-API#name)
+* [Perl5::CoreSmokeDB::Web](https://github.com/abeltje/Perl5-CoreSmokeDB-Web#name)
+
 # AUTHOR
 
 &copy; MMXIII - MMXXII Abe Timmerman <abeltje@cpan.org>, H.Merijn Brand
