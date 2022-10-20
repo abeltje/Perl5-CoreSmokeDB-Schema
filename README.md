@@ -35,7 +35,7 @@ to a `smoke_config`.
 
 ## Report
 
-This table holds the basic information for a Perl5 core smoke report that is consistent throughout the smoke-run (like OS, hardware, source-tree status and agregate information).
+This table holds the basic information for a Perl5 core smoke report that is consistent throughout the smoke-run (like OS, hardware, source-tree status and aggregate information).
 
 ## Config
 
