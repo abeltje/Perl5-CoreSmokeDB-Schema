@@ -4,7 +4,11 @@ Changes on 2023-04-27 for repository at:
 
 Enjoy!
 
-1.08_04 2023-04-27T22:40:33+02:00 (473d883 => Abe Timmerman)
+1.09 2023-04-27T22:42:31+02:00 (908cc8c => Abe Timmerman)
+ - (Abe Timmerman, Thu, 27 Apr 2023 22:42:31 +0200) Autocommit for
+   distribution Perl5::CoreSmokeDB::Schema 1.09 (minor)
+
+1.08_04 2023-04-27T22:40:33+02:00 (a346490 => Abe Timmerman)
  - (Abe Timmerman, Thu, 27 Apr 2023 22:40:33 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.08_04 (same)
 
