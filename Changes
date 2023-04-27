@@ -1,8 +1,21 @@
-Changes on 2022-10-19 for repository at:
-  Fetch URL: git@github.com:abeltje/Perl5-CoreSmokeDB-Schema.git
-  Push  URL: git@github.com:abeltje/Perl5-CoreSmokeDB-Schema.git
+Changes on 2023-04-27 for repository at:
+  Fetch URL: ssh://git@source.test-smoke.org:9999/~/Perl5-CoreSmokeDB-Schema
+  Push  URL: ssh://git@source.test-smoke.org:9999/~/Perl5-CoreSmokeDB-Schema
 
 Enjoy!
+
+1.08_04 2023-04-27T22:40:33+02:00 (473d883 => Abe Timmerman)
+ - (Abe Timmerman, Thu, 27 Apr 2023 22:40:33 +0200) Autocommit for
+   distribution Perl5::CoreSmokeDB::Schema 1.08_04 (same)
+
+1.08_03 2022-10-19T17:26:19+02:00 (f7d802a => Abe Timmerman)
+ - (Abe Timmerman, Wed, 19 Oct 2022 17:26:19 +0200) Autocommit for
+   distribution Perl5::CoreSmokeDB::Schema 1.08_03 (same)
+
+ - (Abe Timmerman, Thu, 20 Oct 2022 12:40:21 +0200) Add description for the
+   TsgatewayConfig table
+
+ - (Abe Timmerman, Thu, 20 Oct 2022 13:12:07 +0200) Fix typo
 
 1.08 2022-10-12T13:20:56+02:00 (febb462 => Abe Timmerman)
  - (Abe Timmerman, Wed, 12 Oct 2022 13:20:56 +0200) Autocommit for
@@ -13,6 +26,17 @@ Enjoy!
 
  - (Abe Timmerman, Wed, 19 Oct 2022 13:03:11 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.0801 (test)
+
+ - (Abe Timmerman, Wed, 19 Oct 2022 15:55:39 +0200) Add more information
+   about the Schema
+ -     Adding description of the tables and picture in README.md
+ -     The picture is generated from the ERD-tool in pgAdmin4
+
+ - (Abe Timmerman, Wed, 19 Oct 2022 15:59:16 +0200) Autocommit for
+   distribution Perl5::CoreSmokeDB::Schema 1.0802 (test)
+
+ - (Abe Timmerman, Wed, 19 Oct 2022 17:22:41 +0200) The version must be a
+   string if one wants Beta versions
 
 1.07 2022-09-25T19:58:32+02:00 (d58714f => Abe Timmerman)
  - (Abe Timmerman, Sun, 25 Sep 2022 19:58:32 +0200) Autocommit for
