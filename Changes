@@ -1,12 +1,23 @@
-Changes on 2023-04-27 for repository at:
+Changes on 2023-05-01 for repository at:
   Fetch URL: ssh://git@source.test-smoke.org:9999/~/Perl5-CoreSmokeDB-Schema
   Push  URL: ssh://git@source.test-smoke.org:9999/~/Perl5-CoreSmokeDB-Schema
 
 Enjoy!
 
-1.09 2023-04-27T22:42:31+02:00 (908cc8c => Abe Timmerman)
+1.09_01 2023-05-01T16:17:06+02:00 (06148ac => Abe Timmerman)
+ - (Abe Timmerman, Mon, 1 May 2023 16:17:06 +0200) Autocommit for
+   distribution Perl5::CoreSmokeDB::Schema 1.09_01 (test)
+
+1.09 2023-04-27T22:42:31+02:00 (9833269 => Abe Timmerman)
  - (Abe Timmerman, Thu, 27 Apr 2023 22:42:31 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.09 (minor)
+
+ - (Abe Timmerman, Mon, 1 May 2023 16:08:12 +0200) Bugfix: we don't want
+   "empty" rows in the matrix
+ -     We have smokers with multiple CC incantations and different -Dxxx
+ -     parameters, we only want the those configs with test results, no
+   "holes"
+ -     in the matrix.
 
 1.08_04 2023-04-27T22:40:33+02:00 (a346490 => Abe Timmerman)
  - (Abe Timmerman, Thu, 27 Apr 2023 22:40:33 +0200) Autocommit for
