@@ -26,8 +26,11 @@ t/00-basic.t
 t/10-persistent-sqlite.t
 t/20-exceptions.t
 t/30-not-full.t
-t/data/report1.json
+t/40-holy-matrix.t
 t/Test/abeltje.pm
+t/data/i3-cc.jsn
+t/data/report1.json
+t/lib/APIish.pm
 xt/00-manifest.t
 xt/01-compile.t
 xt/02-pod_syntax.t

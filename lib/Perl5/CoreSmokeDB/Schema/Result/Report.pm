@@ -637,6 +637,8 @@ sub matrix {
     for my $cc (sort { $a->{index} <=> $b->{index} } values %c_compilers) {
         my $cc_index = $cc->{index};
         for my $cfg (@cfg_in_order) {
+            next if !exists($matrix{$cc_index}{N}{$cfg})
+                 && !exists($matrix{$cc_index}{D}{$cfg});
             my @line;
             for my $debugging (qw/ N D /) {
                 for my $io_env (@io_env_in_order) {
