@@ -244,7 +244,7 @@ sub plevel {
 
 =head1 AUTHOR
 
-E<copy> MMXIII- MMXII - Abe Timmerman <abeltje@cpan.org>, H.Merijn Brand
+E<copy> MMXIII- MMXXIII - Abe Timmerman <abeltje@cpan.org>, H.Merijn Brand
 
 =head1 LICENSE
 
