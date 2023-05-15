@@ -27,6 +27,7 @@ t/10-persistent-sqlite.t
 t/20-exceptions.t
 t/30-not-full.t
 t/40-holy-matrix.t
+t/50-as_hashref.t
 t/Test/abeltje.pm
 t/data/i3-cc.jsn
 t/data/report1.json

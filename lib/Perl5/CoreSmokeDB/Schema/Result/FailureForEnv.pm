@@ -122,6 +122,8 @@ sub as_hashref {
 
     my $record = { $self->get_inflated_columns };
 
+    $record->{failure} = $self->failure->as_hashref;
+
     return $record;
 }
 
