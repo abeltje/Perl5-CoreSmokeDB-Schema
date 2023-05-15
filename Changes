@@ -1,12 +1,29 @@
-Changes on 2023-05-02 for repository at:
-  Fetch URL: git@github.com:abeltje/Perl5-CoreSmokeDB-Schema.git
-  Push  URL: git@github.com:abeltje/Perl5-CoreSmokeDB-Schema.git
+Changes on 2023-05-15 for repository at:
+  Fetch URL: ssh://git@source.test-smoke.org:9999/~/Perl5-CoreSmokeDB-Schema
+  Push  URL: ssh://git@source.test-smoke.org:9999/~/Perl5-CoreSmokeDB-Schema
 
 Enjoy!
 
-1.10 2023-05-02T12:13:05+02:00 (7f762a8 => Abe Timmerman)
+1.10_01 2023-05-15T13:44:30+02:00 (e97dace => Abe Timmerman)
+ - (Abe Timmerman, Mon, 15 May 2023 13:44:30 +0200) Autocommit for
+   distribution Perl5::CoreSmokeDB::Schema 1.10_01 (test)
+
+1.10 2023-05-02T12:13:05+02:00 (8295089 => Abe Timmerman)
  - (Abe Timmerman, Tue, 2 May 2023 12:13:05 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.10 (minor)
+
+ - (Abe Timmerman, Tue, 2 May 2023 15:22:59 +0200) Fix the copyright year
+   range...
+ -     14:48:18    @[Tux] | abeltje,
+ -	 https://metacpan.org/pod/Perl5::CoreSmokeDB::Schema "MMXIII-
+   MMXII"
+ -	 "MMXII - MMXXIII". De eerste reekst is al vreemd, maar
+ -	 ik ben niet op de hoogte van bewezen feiten dat de Romeinen
+ -	 achteruit konden tellen
+
+ - (Abe Timmerman, Mon, 15 May 2023 13:41:21 +0200) Fix: failures weren't
+   expanded for full_report_data
+ -     See https://github.com/abeltje/Perl5-CoreSmokeDB-API/issues/1
 
 1.09_01 2023-05-01T16:17:06+02:00 (7e76b37 => Abe Timmerman)
  - (Abe Timmerman, Mon, 1 May 2023 16:17:06 +0200) Autocommit for
