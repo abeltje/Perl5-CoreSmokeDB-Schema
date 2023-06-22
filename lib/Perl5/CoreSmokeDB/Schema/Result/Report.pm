@@ -534,6 +534,23 @@ __PACKAGE__->remove_column('plevel');
 delete($_plevel_column->{default_value});
 __PACKAGE__->add_column('plevel', $_plevel_column);
 
+##### Create InflateColumn::Bytea
+# we need to make sure the data is a byte-string to store it as `bytea`
+# as it turns out, 'deflate' is called too late, DBIx::Class has already blown
+# up with 'wide-character'. This only a problem via the old POST /report
+# the new RESTish POST /api/report is fine.
+# So we only define inflate, that makes sure we have a char-string.
+use Encode qw< encode decode >;
+my @_bytea = qw< compiler_msgs manifest_msgs nonfatal_msgs log_file out_file >;
+for my $field (@_bytea) {
+    __PACKAGE__->inflate_column(
+        $field => {
+            inflate => sub { decode('UTF8', $_[0]); }, # from database
+#            deflate => sub { encode('UTF8', $_[0]); }, # to database, too late
+        }
+    );
+}
+
 sub arch_os_version_key {
     my $self = shift;
     return join( "##", $self->architecture, $self->osname, $self->osversion, $self->hostname);
