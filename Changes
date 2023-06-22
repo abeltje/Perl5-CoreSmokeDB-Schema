@@ -1,12 +1,20 @@
-Changes on 2023-05-15 for repository at:
-  Fetch URL: git@github.com:abeltje/Perl5-CoreSmokeDB-Schema.git
-  Push  URL: git@github.com:abeltje/Perl5-CoreSmokeDB-Schema.git
+1.12 2023-06-22T13:47:28+02:00 (ebbbce8 => Abe Timmerman)
+ - (Abe Timmerman, Thu, 22 Jun 2023 13:47:28 +0200) Autocommit for
+   distribution Perl5-CoreSmokeDB-Schema 1.12 (minor)
 
-Enjoy!
-
-1.11 2023-05-15T14:06:59+02:00 (5d240e6 => Abe Timmerman)
+1.11 2023-05-15T14:06:59+02:00 (12ac6b3 => Abe Timmerman)
  - (Abe Timmerman, Mon, 15 May 2023 14:06:59 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.11 (minor)
+ - (Abe Timmerman, Thu, 22 Jun 2023 13:42:44 +0200) Define
+   InflateColumn::Bytea
+ -     When retrieving bytea fields from the database, we should decode
+   them
+ -     from utf-8 to characters. The way to the database is more
+   complicated:
+ -     Depending on the way this report data is posted to the service we
+   need
+ -     to add an extra encode() for those bytea fields. That is not done
+   here.
 
 1.10_01 2023-05-15T13:44:30+02:00 (262cf91 => Abe Timmerman)
  - (Abe Timmerman, Mon, 15 May 2023 13:44:30 +0200) Autocommit for
@@ -15,7 +23,6 @@ Enjoy!
 1.10 2023-05-02T12:13:05+02:00 (8295089 => Abe Timmerman)
  - (Abe Timmerman, Tue, 2 May 2023 12:13:05 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.10 (minor)
-
  - (Abe Timmerman, Tue, 2 May 2023 15:22:59 +0200) Fix the copyright year
    range...
  -     14:48:18    @[Tux] | abeltje,
@@ -24,7 +31,6 @@ Enjoy!
  -	 "MMXII - MMXXIII". De eerste reekst is al vreemd, maar
  -	 ik ben niet op de hoogte van bewezen feiten dat de Romeinen
  -	 achteruit konden tellen
-
  - (Abe Timmerman, Mon, 15 May 2023 13:41:21 +0200) Fix: failures weren't
    expanded for full_report_data
  -     See https://github.com/abeltje/Perl5-CoreSmokeDB-API/issues/1
@@ -36,7 +42,6 @@ Enjoy!
 1.09 2023-04-27T22:42:31+02:00 (9833269 => Abe Timmerman)
  - (Abe Timmerman, Thu, 27 Apr 2023 22:42:31 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.09 (minor)
-
  - (Abe Timmerman, Mon, 1 May 2023 16:08:12 +0200) Bugfix: we don't want
    "empty" rows in the matrix
  -     We have smokers with multiple CC incantations and different -Dxxx
@@ -51,37 +56,29 @@ Enjoy!
 1.08_03 2022-10-19T17:26:19+02:00 (f7d802a => Abe Timmerman)
  - (Abe Timmerman, Wed, 19 Oct 2022 17:26:19 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.08_03 (same)
-
  - (Abe Timmerman, Thu, 20 Oct 2022 12:40:21 +0200) Add description for the
    TsgatewayConfig table
-
  - (Abe Timmerman, Thu, 20 Oct 2022 13:12:07 +0200) Fix typo
 
 1.08 2022-10-12T13:20:56+02:00 (febb462 => Abe Timmerman)
  - (Abe Timmerman, Wed, 12 Oct 2022 13:20:56 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.08 (minor)
-
  - (Abe Timmerman, Wed, 19 Oct 2022 12:47:41 +0200) Update dependencies
  -     We need DateTime 1.53 for the `rfc3339` method.
-
  - (Abe Timmerman, Wed, 19 Oct 2022 13:03:11 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.0801 (test)
-
  - (Abe Timmerman, Wed, 19 Oct 2022 15:55:39 +0200) Add more information
    about the Schema
  -     Adding description of the tables and picture in README.md
  -     The picture is generated from the ERD-tool in pgAdmin4
-
  - (Abe Timmerman, Wed, 19 Oct 2022 15:59:16 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.0802 (test)
-
  - (Abe Timmerman, Wed, 19 Oct 2022 17:22:41 +0200) The version must be a
    string if one wants Beta versions
 
 1.07 2022-09-25T19:58:32+02:00 (d58714f => Abe Timmerman)
  - (Abe Timmerman, Sun, 25 Sep 2022 19:58:32 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.07 (same)
-
  - (Abe Timmerman, Wed, 12 Oct 2022 13:11:17 +0200) Fix warning in result
    classes
  -     The classes with ->as_hashref as a method warned for the simple case
@@ -90,7 +87,6 @@ Enjoy!
 1.06 2022-09-25T18:41:54+02:00 (c1f5937 => Abe Timmerman)
  - (Abe Timmerman, Sun, 25 Sep 2022 18:41:54 +0200) Autocommit for
    distribution Perl5::CoreSmokeDB::Schema 1.06 (same)
-
  - (Abe Timmerman, Sun, 25 Sep 2022 19:54:34 +0200) Rename the
    Exception-classes the Schema throws
  -     The Exception::Class exception were still called
@@ -106,7 +102,6 @@ Enjoy!
  -     This module was split from the CoreSmokeDB/Test::Smoke::Gateway.
  -     I want to write a new API server (next to the existing server), so I
  -     don't want to maintain 2 versions of this Schema.
-
  - (Abe Timmerman, Sun, 25 Sep 2022 18:20:12 +0200) Add the 'as_hashref'
    method to most result classes
  -     The 'as_hashref' method uses 'get_inflated_columns' and converts
@@ -116,7 +111,7 @@ Enjoy!
  -     the 'full' parameter.
  -     Having a HashRef is easier to work with than the list of key/value
  -     pairs.
- -     - we also set the application_name to 'perl5coresmokedb' for
+ -     we also set the application_name to 'perl5coresmokedb' for
    Postgresql
  -	 connections, that helps with identifying connections on the
    database
